@@ -1,3 +1,10 @@
-.header {
-  color: olive;
+body {
+  max-width: 400px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
 }
