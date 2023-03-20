@@ -1,4 +1,8 @@
-const booksList = [];
+let booksList = [];
+
+if (localStorage.getItem('data')) {
+    booksList = JSON.parse(localStorage.getItem('data'));
+}
 
 function createContainer() {
     const bookContainer = document.getElementById('books-container');
@@ -6,29 +10,37 @@ function createContainer() {
     <ul id='cards'>
     `;
     const cardsList = document.getElementById('cards');
-    booksList.forEach((card) => {
+    for (let i = 0; i < booksList.length; i += 1) {
       const workCard = document.createElement('li');
       workCard.innerHTML += `
-          <p class="book-name">${card.title}</p>
-          <p class="Author-name">${card.author}</p>
-          <button type="button" class="${card.title}">Remove</button>
+          <p class="book-name">${booksList[i].title}</p>
+          <p class="Author-name">${booksList[i].author}</p>
+          <button type="button" class="${booksList[i].title}">Remove</button>
           <hr>
         `;
       cardsList.appendChild(workCard);
-    });
+    };
 };
 
-const title = document.getElementById('add-book-name').value;
-const author = document.getElementById('add-author-name').value;
-function addNewBook (title, author){
+function addNewBook (){
+ const title = document.getElementById('add-book-name').value;
+ const author = document.getElementById('add-author-name').value;
  const book = {
     title: title,
     author: author
  };
  booksList.push(book);
 }
+
 const addButton = document.getElementById('add-book');
 addButton.addEventListener('click', () => {
     addNewBook();
     createContainer();
+    localStorage.setItem('data', JSON.stringify(booksList));
+    console.log(booksList);
   });
+
+window.onload = () => {
+    createContainer();
+};
+  
