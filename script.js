@@ -12,16 +12,21 @@ function createContainer() {
     const cardsList = document.getElementById('cards');
     for (let i = 0; i < booksList.length; i += 1) {
       const workCard = document.createElement('li');
+      workCard.setAttribute('id',`${booksList[i].title}`);
       workCard.innerHTML += `
           <p class="book-name">${booksList[i].title}</p>
           <p class="Author-name">${booksList[i].author}</p>
-          <button type="button" id="${i}">Remove</button>
+          <button type="button" class="removeBtn">Remove</button>
           <hr>
         `;
+        workCard.querySelector('.removeBtn').addEventListener('click', () => {
+          const childr = document.getElementById(`${booksList[i].title}`);
+          childr.parentNode.removeChild(childr);
+        });
       cardsList.appendChild(workCard);
     };
-    removeBook();
 };
+
 
 function addNewBook (){
  const title = document.getElementById('add-book-name').value;
@@ -31,20 +36,9 @@ function addNewBook (){
     author: author
  };
  booksList.push(book);
-}
+};
 
-function removeBook (){
-for (let i=0; i<1000;i++){
-    let remove = document.getElementById(i);
-  if (document.getElementById(i)!=null){
-    remove.addEventListener('click', () => {
-      booksList.splice([i,1]);
-      localStorage.setItem('data', JSON.splice([i,1]));
-    });
-    console.log('test removeBook fun',i)
-  }
-}
-}
+
 const addButton = document.getElementById('add-book');
 addButton.addEventListener('click', () => {
     addNewBook();
