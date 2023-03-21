@@ -16,10 +16,8 @@ class BooksList {
       const workCard = document.createElement('li');
       workCard.setAttribute('id', `${this.booksList[i].title}`);
       workCard.innerHTML += `
-        <p class="book-name">${this.booksList[i].title}</p>
-        <p class="Author-name">${this.booksList[i].author}</p>
+        <p class="book-name">${this.booksList[i].title} by ${this.booksList[i].author}</p>        
         <button type="button" class="removeBtn">Remove</button>
-        <hr>
         `;
       workCard.querySelector('.removeBtn').addEventListener('click', () => {
         const childr = document.getElementById(`${this.booksList[i].title}`);
@@ -41,6 +39,10 @@ class BooksList {
       author,
     };
     this.booksList.push(book);
+    document.getElementById('add-book-name').value = '';
+    document.getElementById('add-book-name').placeholder = 'Title';
+    document.getElementById('add-author-name').value = '';
+    document.getElementById('add-author-name').placeholder = 'Author';
   }
 }
 
