@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello Microverse!</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header class="header">
-       <h1>Awesome Books</h1>
+      <h1>All awesome books</h1>
     </header>
-    
     <div id="books-container"></div>
+    <div class="form-container">
+      <form action="">
+        <h2>Add a new book</h2>
+        <label for="book-name"></label>
+        <input
+          id="add-book-name"
+          name="book-name"
+          placeholder="Title"
+          aria-label="add-book-name"
+          type="text"
+        />
+        <label for="author-name"></label>
+        <input
+          id="add-author-name"
+          name="author-name"
+          placeholder="Author"
+          aria-label="add-author-name"
+          type="text"
+        />
+        <button id="add-book" aria-label="add-book" type="button">Add</button>
+      </form>
+    </div>
 
-    <form action="">
-        <input id="add-book-name" placeholder="Title" aria-label="add-book-name" type="text">
-        <input id="add-author-name" placeholder="Author" aria-label="add-author-name" type="text">
-        <button  id="add-book" aria-label="add-book" type="button">Add</button>
-    </form>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
