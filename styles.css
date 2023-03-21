@@ -1,10 +1,68 @@
 body {
-  max-width: 400px;
+  
+}
+
+h1 {
+  text-align: center;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  border: 4px solid black;
+}
+
+#cards li {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+}
+
+li:nth-child(even) {
+  background-color: rgb(138, 138, 138);
+}
+
+.book-name {
+  margin: 1%;
+}
+
+.removeBtn {
+  margin: 1%;
+  border: 4px solid black;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
+  justify-content: space-between;
+  width: 50%;
+  padding: 2%;
+}
+
+form h2 {
+  text-align: center;
+}
+
+form input {
+  margin: 1.5%;
+  border: 4px solid black;
+}
+
+form button {
+  margin: 1.5%;
+  width: 15%;
+  min-width: 50px;
+  align-self: flex-end;
+  border: 4px solid black;
 }
