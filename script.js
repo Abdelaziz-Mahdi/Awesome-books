@@ -14,10 +14,8 @@ function createContainer() {
     const workCard = document.createElement('li');
     workCard.setAttribute('id', `${booksList[i].title}`);
     workCard.innerHTML += `
-      <p class="book-name">${booksList[i].title}</p>
-      <p class="Author-name">${booksList[i].author}</p>
+      <p class="book-name">${booksList[i].title} by ${booksList[i].author}</p>
       <button type="button" class="removeBtn">Remove</button>
-      <hr>
       `;
     workCard.querySelector('.removeBtn').addEventListener('click', () => {
       const childr = document.getElementById(`${booksList[i].title}`);
@@ -39,6 +37,10 @@ function addNewBook() {
     author,
   };
   booksList.push(book);
+  document.getElementById('add-book-name').value='';
+  document.getElementById('add-book-name').placeholder='Title';
+  document.getElementById('add-author-name').value='';
+  document.getElementById('add-author-name').placeholder='Author';
 }
 
 const addButton = document.getElementById('add-book');
