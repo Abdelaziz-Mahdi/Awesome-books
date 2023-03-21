@@ -37,10 +37,10 @@ function addNewBook() {
     author,
   };
   booksList.push(book);
-  document.getElementById('add-book-name').value ='';
-  document.getElementById('add-book-name').placeholder ='Title';
-  document.getElementById('add-author-name').value ='';
-  document.getElementById('add-author-name').placeholder ='Author';
+  document.getElementById('add-book-name').value = '';
+  document.getElementById('add-book-name').placeholder = 'Title';
+  document.getElementById('add-author-name').value = '';
+  document.getElementById('add-author-name').placeholder = 'Author';
 }
 
 const addButton = document.getElementById('add-book');
