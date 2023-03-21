@@ -12,7 +12,7 @@ function createContainer() {
   const cardsList = document.getElementById('cards');
   for (let i = 0; i < booksList.length; i += 1) {
     const workCard = document.createElement('li');
-    workCard.setAttribute('id',`${booksList[i].title}`);
+    workCard.setAttribute('id', `${booksList[i].title}`);
     workCard.innerHTML += `
       <p class="book-name">${booksList[i].title}</p>
       <p class="Author-name">${booksList[i].author}</p>
@@ -27,19 +27,19 @@ function createContainer() {
       createContainer();
     });
 
-  cardsList.appendChild(workCard);
-  };
-};
+    cardsList.appendChild(workCard);
+  }
+}
 
-function addNewBook (){
+function addNewBook() {
   const title = document.getElementById('add-book-name').value;
   const author = document.getElementById('add-author-name').value;
   const book = {
-    title: title,
-    author: author,
+    title,
+    author,
   };
   booksList.push(book);
-};
+}
 
 const addButton = document.getElementById('add-book');
 addButton.addEventListener('click', () => {
@@ -51,4 +51,3 @@ addButton.addEventListener('click', () => {
 window.onload = () => {
   createContainer();
 };
-  
