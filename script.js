@@ -15,11 +15,12 @@ function createContainer() {
       workCard.innerHTML += `
           <p class="book-name">${booksList[i].title}</p>
           <p class="Author-name">${booksList[i].author}</p>
-          <button type="button" class="${booksList[i].title}">Remove</button>
+          <button type="button" id="${i}">Remove</button>
           <hr>
         `;
       cardsList.appendChild(workCard);
     };
+    removeBook();
 };
 
 function addNewBook (){
@@ -32,6 +33,18 @@ function addNewBook (){
  booksList.push(book);
 }
 
+function removeBook (){
+for (let i=0; i<1000;i++){
+    let remove = document.getElementById(i);
+  if (document.getElementById(i)!=null){
+    remove.addEventListener('click', () => {
+      booksList.splice([i,1]);
+      localStorage.setItem('data', JSON.splice([i,1]));
+    });
+    console.log('test removeBook fun',i)
+  }
+}
+}
 const addButton = document.getElementById('add-book');
 addButton.addEventListener('click', () => {
     addNewBook();
