@@ -38,11 +38,16 @@ class BooksList {
       title,
       author,
     };
-    this.booksList.push(book);
-    document.getElementById('add-book-name').value = '';
-    document.getElementById('add-book-name').placeholder = 'Title';
-    document.getElementById('add-author-name').value = '';
-    document.getElementById('add-author-name').placeholder = 'Author';
+    if (title && author) {
+      this.booksList.push(book);
+      document.getElementById('add-book-name').value = '';
+      document.getElementById('add-book-name').placeholder = 'Title';
+      document.getElementById('add-author-name').value = '';
+      document.getElementById('add-author-name').placeholder = 'Author';
+      document.getElementById('validation').innerHTML = '';
+    } else {
+      document.getElementById('validation').innerHTML = 'Please fill author and book title';
+    };
   }
 }
 
