@@ -47,7 +47,7 @@ class BooksList {
       document.getElementById('validation').innerHTML = '';
     } else {
       document.getElementById('validation').innerHTML = 'Please fill author and book title';
-    };
+    }
   }
 }
 
