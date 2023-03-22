@@ -16,7 +16,7 @@ class BooksList {
       const workCard = document.createElement('li');
       workCard.setAttribute('id', `${this.booksList[i].title}`);
       workCard.innerHTML += `
-        <p class="book-name">${this.booksList[i].title} by ${this.booksList[i].author}</p>        
+        <p class="book-name">"${this.booksList[i].title}" by ${this.booksList[i].author}</p>        
         <button type="button" class="removeBtn">Remove</button>
         `;
       workCard.querySelector('.removeBtn').addEventListener('click', () => {
