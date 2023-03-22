@@ -63,6 +63,7 @@
 
 - html with css style using js classes.
 - Sections created dinamically by js.
+- Single page application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,8 +128,8 @@ You can deploy this project using tools as Parcel.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Add css styles.
-- Contact and Nav bar. 
+- Add books info.
+- Add style to the page.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
